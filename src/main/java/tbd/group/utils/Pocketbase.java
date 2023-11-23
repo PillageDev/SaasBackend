@@ -127,6 +127,11 @@ public class Pocketbase {
         }
     }
 
+    /**
+     * Updates a user based on the id and parameters
+     * @param id The id of the user to update
+     * @param update The update object
+     */
     public static void updateUser(String id, @NonNull PreparedUserUpdate update) {
         try {
             String endpoint = "/api/collections/users/records/" + id;
@@ -150,6 +155,11 @@ public class Pocketbase {
         }
     }
 
+    /**
+     * Deletes a user from the database
+     * @param id The id of the user to delete
+     * @return If the transaction was successful
+     */
     public static boolean deleteUser(String id) {
         try {
             String endpoint = "/api/collections/users/records/" + id;
@@ -164,6 +174,10 @@ public class Pocketbase {
         }
     }
 
+    /**
+     * Listens for server side events and returns them
+     * @return The server side event data.
+     */
     public static SSEData listen() {
         try {
             String endpoint = "/api/realtime";
